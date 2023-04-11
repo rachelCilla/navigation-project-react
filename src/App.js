@@ -1,41 +1,27 @@
-import Button from "./Button";
-import { GoBell, GoCloudDownload, GoDatabase } from "react-icons/go";
+import Accordion from "./components/Accordion";
 
 function App() {
-  const onClick = () => {
-    console.log("clicked");
-  };
+  const items = [
+    {
+      id: 1,
+      label: "What is React?",
+      content: "React is a front end javascript framework",
+    },
+    {
+      id: 2,
+      label: "Why use React?",
+      content: "React is a favorite JS library among engineers",
+    },
+    {
+      id: 3,
+      label: "How do you use React?",
+      content: "You use React by creating components",
+    },
+  ];
 
   return (
     <div>
-      <div>
-        <Button onClick={onClick} success rounded outline>
-          <GoBell />
-          click me
-        </Button>
-      </div>
-      <div>
-        <Button danger outline>
-          <GoCloudDownload />
-          buy now
-        </Button>
-      </div>
-      <div>
-        <Button warning>
-          <GoDatabase />
-          see deal
-        </Button>
-      </div>
-      <div>
-        <Button outline secondary>
-          hide ads
-        </Button>
-      </div>
-      <div>
-        <Button primary rounded>
-          something
-        </Button>
-      </div>
+      <Accordion items={items} />
     </div>
   );
 }
